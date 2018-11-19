@@ -15,12 +15,8 @@
     "build": "yarn clean && yarn transpile",
     "test": "yarn lint"
   },
-  "dependencies": {
-    "redis": "^2.8.0"
-  },
   "devDependencies": {
     "@types/node": "^10.11.4",
-    "@types/redis": "^2.8.6",
     "@types/request": "^2.47.1",
     "@types/request-promise-native": "^1.0.15",
     "del": "^3.0.0",
