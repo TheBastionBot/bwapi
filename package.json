@@ -1,0 +1,10 @@
+{
+  "name": "bwapi",
+  "version": "1.0.0",
+  "description": "A wrapper library to interact with the Bastion Web API.",
+  "main": "dist/main.js",
+  "repository": "https://github.com/TheBastionBot/bwapi.git",
+  "author": "Sankarsan Kampa",
+  "license": "GPL-3.0",
+  "private": true
+}
