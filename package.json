@@ -7,6 +7,14 @@
   "author": "Sankarsan Kampa",
   "license": "GPL-3.0",
   "private": true,
+  "scripts": {
+    "clean": "./node_modules/.bin/gulp clean",
+    "transpile": "./node_modules/.bin/tsc",
+    "lint:tslint": "./node_modules/.bin/tslint -c tslint.yaml 'source/**/*.ts'",
+    "lint": "yarn lint:tslint",
+    "build": "yarn clean && yarn transpile",
+    "test": "yarn lint"
+  },
   "dependencies": {
     "redis": "^2.8.0"
   },
