@@ -16,13 +16,13 @@
     "test": "yarn lint"
   },
   "devDependencies": {
-    "@types/node": "^10.11.4",
+    "@types/node": "^10.12.12",
     "@types/request": "^2.47.1",
     "@types/request-promise-native": "^1.0.15",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.2.2"
   },
   "peerDependencies": {
     "request": "^2.88.0",
