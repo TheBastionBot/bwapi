@@ -2,23 +2,21 @@ import * as request from "request-promise-native";
 
 class BWAPIWrapper {
   private BASE_URL: string = "https://api.bastionbot.org";
-  private HEADERS: object = {};
+  private OPTIONS: request.RequestPromiseOptions = {
+    json: true,
+  };
 
-  constructor(headers?: object) {
-    if (headers && typeof headers === "object") {
-      Object.assign(this.HEADERS, headers);
+  constructor(options?: request.RequestPromiseOptions) {
+    if (options && typeof options === "object") {
+      Object.assign(this.OPTIONS, options);
     }
   }
 
   public async request(path: string, qs?: object) {
     let url: string = this.BASE_URL + path;
-    let options = {
-      headers: this.HEADERS,
-      json: true,
-      qs,
-    };
+    this.OPTIONS.qs = qs;
 
-    return await request(url, options);
+    return await request(url, this.OPTIONS);
   }
 }
 
