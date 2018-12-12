@@ -9,22 +9,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const request = require("request-promise-native");
 class BWAPIWrapper {
-    constructor(headers) {
+    constructor(options) {
         this.BASE_URL = "https://api.bastionbot.org";
-        this.HEADERS = {};
-        if (headers && typeof headers === "object") {
-            Object.assign(this.HEADERS, headers);
+        this.OPTIONS = {
+            json: true,
+        };
+        if (options && typeof options === "object") {
+            Object.assign(this.OPTIONS, options);
         }
     }
     request(path, qs) {
         return __awaiter(this, void 0, void 0, function* () {
             let url = this.BASE_URL + path;
-            let options = {
-                headers: this.HEADERS,
-                json: true,
-                qs,
-            };
-            return yield request(url, options);
+            this.OPTIONS.qs = qs;
+            return yield request(url, this.OPTIONS);
         });
     }
 }
