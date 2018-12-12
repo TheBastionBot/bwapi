@@ -18,10 +18,12 @@ class BWAPIWrapper {
             Object.assign(this.OPTIONS, options);
         }
     }
-    request(path, qs) {
+    request(path, options) {
         return __awaiter(this, void 0, void 0, function* () {
             let url = this.BASE_URL + path;
-            this.OPTIONS.qs = qs;
+            if (options && typeof options === "object") {
+                Object.assign(this.OPTIONS, options);
+            }
             return yield request(url, this.OPTIONS);
         });
     }
