@@ -1,7 +1,8 @@
-﻿declare class BWAPIWrapper {
+﻿import * as request from "request-promise-native";
+declare class BWAPIWrapper {
     private BASE_URL;
-    private HEADERS;
-    constructor(headers?: object);
+    private OPTIONS;
+    constructor(options?: request.RequestPromiseOptions);
     request(path: string, qs?: object): Promise<any>;
 }
 export = BWAPIWrapper;
