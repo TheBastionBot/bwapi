@@ -14,12 +14,13 @@ class BWAPIWrapper {
 
   public async request(path: string, options?: request.RequestPromiseOptions) {
     let url: string = this.BASE_URL + path;
+    let requestOptions = this.OPTIONS;
 
     if (options && typeof options === "object") {
-      Object.assign(this.OPTIONS, options);
+      Object.assign(requestOptions, options);
     }
 
-    return await request(url, this.OPTIONS);
+    return await request(url, requestOptions);
   }
 }
 
