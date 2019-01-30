@@ -21,7 +21,7 @@ class BWAPIWrapper {
     request(path, options) {
         return __awaiter(this, void 0, void 0, function* () {
             let url = this.BASE_URL + path;
-            let requestOptions = this.OPTIONS;
+            let requestOptions = Object.assign({}, this.OPTIONS);
             if (options && typeof options === "object") {
                 Object.assign(requestOptions, options);
             }
