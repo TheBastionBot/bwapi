@@ -1,18 +1,18 @@
-import * as request from "request-promise-native";
+import * as Request from "request-promise-native";
 
 class BWAPIWrapper {
   private BASE_URL: string = "https://api.bastionbot.org";
-  private OPTIONS: request.RequestPromiseOptions = {
+  private OPTIONS: Request.RequestPromiseOptions = {
     json: true,
   };
 
-  constructor(options?: request.RequestPromiseOptions) {
+  constructor(options?: Request.RequestPromiseOptions) {
     if (options && typeof options === "object") {
       Object.assign(this.OPTIONS, options);
     }
   }
 
-  public async request(path: string, options?: request.RequestPromiseOptions) {
+  public async request(path: string, options?: Request.RequestPromiseOptions) {
     let url: string = this.BASE_URL + path;
     let requestOptions = this.OPTIONS;
 
@@ -20,7 +20,7 @@ class BWAPIWrapper {
       Object.assign(requestOptions, options);
     }
 
-    return await request(url, requestOptions);
+    return await Request(url, requestOptions);
   }
 }
 
