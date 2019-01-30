@@ -14,7 +14,7 @@ class BWAPIWrapper {
 
   public async request(path: string, options?: Request.RequestPromiseOptions) {
     let url: string = this.BASE_URL + path;
-    let requestOptions = this.OPTIONS;
+    let requestOptions = Object.assign({}, this.OPTIONS);
 
     if (options && typeof options === "object") {
       Object.assign(requestOptions, options);
