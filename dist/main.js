@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const request = require("request-promise-native");
+const Request = require("request-promise-native");
 class BWAPIWrapper {
     constructor(options) {
         this.BASE_URL = "https://api.bastionbot.org";
@@ -21,10 +21,11 @@ class BWAPIWrapper {
     request(path, options) {
         return __awaiter(this, void 0, void 0, function* () {
             let url = this.BASE_URL + path;
+            let requestOptions = this.OPTIONS;
             if (options && typeof options === "object") {
-                Object.assign(this.OPTIONS, options);
+                Object.assign(requestOptions, options);
             }
-            return yield request(url, this.OPTIONS);
+            return yield Request(url, requestOptions);
         });
     }
 }
