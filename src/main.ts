@@ -1,7 +1,7 @@
 import * as Request from "request-promise-native";
 
 class BWAPIWrapper {
-  private BASE_URL: string = "https://api.bastionbot.org";
+  private BASE_URL: string = "https://thebastionbot.herokuapp.com";
   private OPTIONS: Request.RequestPromiseOptions = {
     json: true,
   };
